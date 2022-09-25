@@ -40,31 +40,6 @@ public class Assignment5 {
         }
         return recursiveFibSeq(n - 1) + recursiveFibSeq(n - 2); // F(n) = F(n-1) + F(n-2)
     }
-
-    /**
-     * Requests the user's input and validates that it is an integer.
-     * 
-     * @return	integer, n, the user's input.
-     */
-    public static int getUserInputInt() {
-    	boolean goodInput = false;
-        int n = 0;
-        // Get user input.
-        Scanner input = new Scanner(System.in);
-        while (!goodInput) {
-            try {
-                System.out.print("Please enter a value for n: ");
-                n = input.nextInt();
-                goodInput = true;
-            } catch (InputMismatchException ime) {
-                input.nextLine(); // Clear input buffer.
-                System.out.println("INPUT ERROR: Please enter an integer value.");
-                goodInput = false;
-            }
-        }
-        input.close();
-		return n;
-    }
     
 	/**
 	 * Used to get an integer value from the user and validate it is within bounds. Handles incorrect inputs such as strings, doubles, etc.

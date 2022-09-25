@@ -63,7 +63,6 @@ public class Assignment5 {
     /**
      * Returns the nth term of the Fibonacci sequence, calculated recursively.
      * 
-     * @author  Stephen Sturges Jr
      * @param n The nth term of the Fibonacci sequence.
      * @return  long value of the nth term of the Fibonacci sequence.
      */

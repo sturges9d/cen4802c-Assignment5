@@ -24,6 +24,41 @@ public class Assignment5 {
         // Display result in the console.
         System.out.println(displayResult(n, result));
     }
+    
+    /**
+     * Displays the result of the Fibonacci calculation associated with the requested nth term.
+     * 
+     * @param n			The nth term requested by the user.
+     * @param result	The value associated with the nth term of the fibonacci sequence.
+     */
+    public static String displayResult(int n, long result) {
+    	// Convert requested value to a char array.
+    	char[] inputValue = Integer.toString(n).toCharArray();
+    	StringBuilder sb = new StringBuilder();
+    	sb.append("The ");
+    	sb.append(n);
+    	// If the number in the ones place of the converted value is 1, 2, or 3, the output string is changed to represent, for example, 21st, 22nd, or 23rd.
+        if (n >= 10 && inputValue[inputValue.length - 2] == '1') {
+        	sb.append("th ");
+        } else {
+            switch (inputValue[inputValue.length - 1]) {
+                case '1':
+                	sb.append("st ");
+                    break;
+                case '2':
+                	sb.append("nd ");
+                    break;
+                case '3':
+                	sb.append("rd ");
+                    break;
+                default:
+                	sb.append("th ");
+                    break;
+            }
+        }
+        sb.append("term of the Fibonacci sequence is " + result + ".");
+        return sb.toString();
+    }
 
     /**
      * Returns the nth term of the Fibonacci sequence, calculated recursively.
@@ -72,40 +107,5 @@ public class Assignment5 {
 		input.close();
 		return userInput;
 	} // End of userInputInt method.
-    
-    /**
-     * Displays the result of the Fibonacci calculation associated with the requested nth term.
-     * 
-     * @param n			The nth term requested by the user.
-     * @param result	The value associated with the nth term of the fibonacci sequence.
-     */
-    public static String displayResult(int n, long result) {
-    	// Convert requested value to a char array.
-    	char[] inputValue = Integer.toString(n).toCharArray();
-    	StringBuilder sb = new StringBuilder();
-    	sb.append("The ");
-    	sb.append(n);
-    	// If the number in the ones place of the converted value is 1, 2, or 3, the output string is changed to represent, for example, 21st, 22nd, or 23rd.
-        if (n >= 10 && inputValue[inputValue.length - 2] == '1') {
-        	sb.append("th ");
-        } else {
-            switch (inputValue[inputValue.length - 1]) {
-                case '1':
-                	sb.append("st ");
-                    break;
-                case '2':
-                	sb.append("nd ");
-                    break;
-                case '3':
-                	sb.append("rd ");
-                    break;
-                default:
-                	sb.append("th ");
-                    break;
-            }
-        }
-        sb.append("term of the Fibonacci sequence is " + result + ".");
-        return sb.toString();
-    }
     
 }
